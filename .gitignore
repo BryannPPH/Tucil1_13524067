@@ -1,0 +1,26 @@
+# Build folders
+build/
+bin/
+
+# Compiled files
+*.o
+*.out
+*.exe
+*.a
+*.so
+*.dylib
+
+# Debug / profiling
+*.dSYM/
+*.gch
+*.gcno
+*.gcda
+
+# MacOS
+.DS_Store
+
+# VSCode
+.vscode/
+
+# Logs
+*.log
