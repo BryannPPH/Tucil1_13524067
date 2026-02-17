@@ -8,29 +8,11 @@ private:
     int col;
 
 public:
-    Queen() : row(-1), col(-1) {}
-
-    Queen(int r, int c)
-    {
-        row = r;
-        col = c;
-    }
-
-    int getRow() const
-    {
-        return row;
-    }
-
-    int getCol() const
-    {
-        return col;
-    }
-
-    void setPosition(int r, int c)
-    {
-        row = r;
-        col = c;
-    }
+    Queen();
+    Queen(int r, int c);
+    int getRow() const;
+    int getCol() const;
+    void setPosition(int r, int c);
 };
 
 #endif

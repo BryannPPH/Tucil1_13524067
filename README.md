@@ -1,1 +1,2 @@
-# Tugas-Kecil-1---IF2211-Strategi-Algoritma---Queens
+# Linkedin's Queens Solver
+
