@@ -1,12 +1,12 @@
-# Linkedin's Queens Solver
-
+# Linkedin's Queens Solver 
+### Brute Force Approach
 <p align="center">
   <img src="assets/QUEENS.png" width="500"/>
 </p>
 
 ## Description
-A desktop application that solves a modified N-Queens problem with color and adjacency constraints using both pure brute-force and optimized backtracking approaches. This solver follows the generic rule of the puzzle queens.
-The application is built using Python (Tkinter) for the graphical interface and a C++ backend solver for high-performance computation. The solving process is visualized live with adaptive update control for smooth rendering.
+A desktop application that solves a Queens puzzle problem with color and adjacency constraints using both pure brute force and optimized backtracking approaches. This solver follows the generic rule of the puzzle queens.
+The application is built using Python for the Graphical User Interface and a C++ backend solver for high performance computation. The solving process is visualized live with adaptive update control for smooth rendering.
 
 ## Features
 - Two algorithms available
@@ -86,6 +86,11 @@ PYTHONPATH=build python3 src/app.py
 set PYTHONPATH=build
 python src/app.py
 ```
+
+### Tips
+- Make sure the C++ backend is actually built as a shared library. Otherwise, Python won't be able to call C++ functions.
+- If Python fails to import a module from C++ (ImportError), check to see if the .so (Linux/macOS) or .dll (Windows) file is in build/.
+- Always run Python from the root of the project folder, not the build/ folder.
 
 ## Authors
 | Nama                           | NIM      |
