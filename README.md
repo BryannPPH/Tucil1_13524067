@@ -1,5 +1,9 @@
 # Linkedin's Queens Solver
 
+<p align="center">
+  <img src="assets/QUEENS.png" width="500"/>
+</p>
+
 ## Description
 A desktop application that solves a modified N-Queens problem with color and adjacency constraints using both pure brute-force and optimized backtracking approaches. This solver follows the generic rule of the puzzle queens.
 The application is built using Python (Tkinter) for the graphical interface and a C++ backend solver for high-performance computation. The solving process is visualized live with adaptive update control for smooth rendering.
@@ -45,6 +49,13 @@ The application is built using Python (Tkinter) for the graphical interface and 
     - MinGW / GCC 9+ (Windows / Linux)
     - Clang (macOS)
 - CMake: Version 3.15 or higher
+  
+### Install Dependencies
+```bash
+sudo apt update
+sudo apt install python3 python3-pip python3-tk
+pip3 install Pillow
+```
 
 ## Installation
 - Clone the Repository
@@ -63,12 +74,14 @@ make
 cd ..
 ```
 
-- Running the Application
-## MacOS / Linux
+## Running the Application
+
+### MacOS / Linux
 ```bash
 PYTHONPATH=build python3 src/app.py
 ```
-## Windows
+
+### Windows
 ```bash
 set PYTHONPATH=build
 python src/app.py
