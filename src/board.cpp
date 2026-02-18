@@ -39,3 +39,13 @@ const vector<vector<char>> &Board::getBoard() const
 {
     return board;
 }
+
+int Board::countDistinctColors() const
+{
+    std::unordered_set<char> colors;
+    for (const auto &row : board)
+    {
+        for (char c : row) colors.insert(c);
+    }
+    return static_cast<int>(colors.size());
+}

@@ -74,9 +74,11 @@ def show_solution():
     global current_board, current_solution, current_result
 
     if current_board is None:
+        messagebox.showwarning("Warning", "No board to solve.")
         return
 
     def run_solver():
+        global current_board, current_solution, current_result
         try:
             result = queens_solver.solveBoard(
                 current_board,
@@ -151,8 +153,14 @@ def save_as_txt():
     output_path = os.path.join("test/output", f"{base_name}_solution.txt")
 
     with open(output_path, "w") as f:
-        for row in current_solution:
-            f.write("".join(row) + "\n")
+        for i, row in enumerate(current_board):
+            line = ""
+            for j, cell in enumerate(row):
+                if current_solution[i][j] == '#':
+                    line += '#'
+                else:
+                    line += cell
+            f.write(line + "\n")
 
         f.write("\n")
         f.write(f"Waktu Pencarian: {current_result.durationMs} ms\n")

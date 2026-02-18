@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <vector>
+#include <unordered_set>
 
 using namespace std;
 
@@ -20,6 +21,7 @@ public:
     int getSize() const;
     char getElmt(int row, int col) const;
     const vector<vector<char>> &getBoard() const;
+    int countDistinctColors() const;
 };
 
 #endif

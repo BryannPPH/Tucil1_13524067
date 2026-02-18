@@ -1,0 +1,10 @@
+AAAAA#F
+AA#AAFF
+AAAA#EF
+A#BAEEF
+ABC#EEG
+DBBBEE#
+#DBBEEE
+
+Waktu Pencarian: 33 ms
+Jumlah Cases: 631996

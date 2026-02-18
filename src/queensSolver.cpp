@@ -102,7 +102,7 @@ void QueensSolver::bruteforce(int row)
 
         cnt++;
 
-        if (stepCallback && cnt % 50000 == 0) stepCallback(solution);
+        // if (stepCallback && cnt % 50000 == 0) stepCallback(solution);
 
         bruteforce(row + 1);
 
@@ -110,13 +110,25 @@ void QueensSolver::bruteforce(int row)
 
         solution[row][col] = '.';
 
-        if (stepCallback && cnt % 50000 == 0) stepCallback(solution);
+        // if (stepCallback && cnt % 50000 == 0) stepCallback(solution);
     }
 }
 
 SolveResult QueensSolver::solve()
 {
-    auto start = chrono::high_resolution_clock::now();
+    int distinctColors = board.countDistinctColors();
+    if (distinctColors != n)
+    {
+        SolveResult result;
+        result.countCases = 0;
+        result.durationMs = 0;
+        result.found = false;
+        result.board = board.getBoard();
+        result.solution = {};
+        return result;
+    }
+
+    auto start = std::chrono::high_resolution_clock::now();
 
     if (optimized) bruteforceopt(0);
     else bruteforce(0);
