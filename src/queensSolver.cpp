@@ -13,18 +13,17 @@ bool QueensSolver::isSafe(int row, int col)
     for (int r = 0; r < row; r++)
     {
         int c = currentPlacement[r];
-        //cek sama kolom
         if (c == col) return false;
-        // Cek tetangga
+
         if (abs(r - row) <= 1 && abs(c - col) <= 1) return false;
-        // Cek sama warna
+
         if (board.getElmt(r, c) == board.getElmt(row, col)) return false;
     }
 
     return true;
 }
 
-bool QueensSolver::isValidFullPlacement()
+bool QueensSolver::isValidPlacement()
 {
     for (int r1 = 0; r1 < n; r1++)
     {
@@ -84,7 +83,7 @@ void QueensSolver::bruteforce(int row)
     {
         countCases++;
 
-        if (isValidFullPlacement())
+        if (isValidPlacement())
         {
             found = true;
 
@@ -102,7 +101,7 @@ void QueensSolver::bruteforce(int row)
 
         cnt++;
 
-        // if (stepCallback && cnt % 50000 == 0) stepCallback(solution);
+        if (stepCallback && cnt % 50000 == 0) stepCallback(solution);
 
         bruteforce(row + 1);
 
@@ -110,7 +109,7 @@ void QueensSolver::bruteforce(int row)
 
         solution[row][col] = '.';
 
-        // if (stepCallback && cnt % 50000 == 0) stepCallback(solution);
+        if (stepCallback && cnt % 50000 == 0) stepCallback(solution);
     }
 }
 

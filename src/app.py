@@ -259,7 +259,6 @@ button_frame.pack()
 image_button(button_frame, load_btn_img, load_file).pack(pady=12)
 image_button(button_frame, solve_btn_img, show_solution).pack(pady=(12, 4))
 
-# ===== CHECKBOX =====
 optimized_checkbox = tk.Checkbutton(
     button_frame,
     text="Optimized",

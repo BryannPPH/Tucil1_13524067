@@ -36,7 +36,7 @@ private:
     bool optimized;
     
     bool isSafe(int row, int col);
-    bool isValidFullPlacement();
+    bool isValidPlacement();
     void bruteforceopt(int row);
     void bruteforce(int row);
 
