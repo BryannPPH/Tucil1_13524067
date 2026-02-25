@@ -20,10 +20,12 @@ std::vector<std::vector<char>> loadBoardFile(const std::string& filename)
 
     while (getline(file, line))
     {
+        if (!line.empty() && line.back() == '\r') line.pop_back();
         std::vector<char> row;
         for (char c : line) row.push_back(c);
         tempBoard.push_back(row);
     }
+
 
     file.close();
     return tempBoard;

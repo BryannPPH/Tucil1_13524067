@@ -53,8 +53,7 @@ The application is built using Python for the Graphical User Interface and a C++
 ### Install Dependencies
 ```bash
 sudo apt update
-sudo apt install python3 python3-pip python3-tk
-pip3 install Pillow
+sudo apt install -y python3 python3-pip python3-tk python3-pil python3-pil.imagetk build-essential cmake python3-dev pybind11-dev
 ```
 
 ## Installation
@@ -83,8 +82,8 @@ PYTHONPATH=build python3 src/app.py
 
 ### Windows
 ```bash
-set PYTHONPATH=build
-python src/app.py
+export PYTHONPATH=build
+python3 src/app.py
 ```
 
 ### Tips
@@ -96,3 +95,9 @@ python src/app.py
 | Nama                           | NIM      |
 | ------------------------------ | -------- |
 | Bryan Pratama Putra Hendra     | 13524067 |
+
+# Why Did I Commit Again?
+This commit fixes a cross-platform issue when reading the board file.
+The program was originally developed and tested on macOS, where line endings use `\n`. On Windows, line endings use `\r\n`, which caused an extra `\r` character to be read and made the board invalid.
+This update only adds stripping of `\r` when reading the board file so the program works correctly on Windows as well as macOS/Linux.
+No algorithm or feature changes were made — this is only a compatibility fix.
